@@ -9,6 +9,9 @@
   "author": "dom111 <dom111@users.noreply.github.com>",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "npm run ts:compile && npm run prettier:format",
     "prettier:check": "prettier --config .prettierrc --check '**/*.ts'",
