@@ -18,7 +18,9 @@
     "ts:compile": "tsc --build tsconfig.json"
   },
   "devDependencies": {
+    "@civ-clone/core-game": "^0.1.7",
     "@civ-clone/core-player": "^0.1.0",
+    "@civ-clone/core-save-game": "^0.1.11",
     "@civ-clone/core-terrain": "^0.1.0",
     "@types/chai": "^4.0",
     "@types/chai-spies": "^1.0",

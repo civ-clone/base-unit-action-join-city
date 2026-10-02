@@ -11,6 +11,11 @@ class JoinCity extends Action_1.default {
         this._city = city;
         this._cityGrowthRegistry = cityGrowthRegistry;
     }
+    // `Action.forUnit` rebuilds an action from `(from, to, unit, ruleRegistry)`, which would put the `RuleRegistry` where
+    // the `City` goes.
+    forUnit(unit) {
+        return new JoinCity(this.from(), this.to(), unit, this._city, this.ruleRegistry(), this._cityGrowthRegistry);
+    }
     perform() {
         const cityGrowth = this._cityGrowthRegistry.getByCity(this._city), storedFood = cityGrowth.progress().value();
         // Grown through `CityGrowth`, so the ruleset's `Grow` rules give the new citizen a tile (or make it a specialist)
