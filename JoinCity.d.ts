@@ -15,6 +15,7 @@ export declare class JoinCity extends Action {
     ruleRegistry?: RuleRegistry,
     cityGrowthRegistry?: CityGrowthRegistry
   );
+  forUnit(unit: Unit): JoinCity;
   perform(): void;
 }
 export default JoinCity;

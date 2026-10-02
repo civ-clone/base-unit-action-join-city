@@ -30,6 +30,19 @@ export class JoinCity extends Action {
     this._cityGrowthRegistry = cityGrowthRegistry;
   }
 
+  // `Action.forUnit` rebuilds an action from `(from, to, unit, ruleRegistry)`, which would put the `RuleRegistry` where
+  // the `City` goes.
+  forUnit(unit: Unit): JoinCity {
+    return new JoinCity(
+      this.from(),
+      this.to(),
+      unit,
+      this._city,
+      this.ruleRegistry(),
+      this._cityGrowthRegistry
+    );
+  }
+
   perform(): void {
     const cityGrowth = this._cityGrowthRegistry.getByCity(this._city),
       storedFood = cityGrowth.progress().value();
