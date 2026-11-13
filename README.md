@@ -8,3 +8,5 @@ player's cities, adding one to its size.
 - `joinableCity(unit, tile)` returns the unit's player's `City` on `tile` if the unit may join it, or `null`.
 - `CanJoinCity` rules limit which cities a unit may join (Civilization: under size 10). Which units may join is decided
   by the rule that offers the action.
+- `lib/sizeLimit`: `tooLargeToJoin(limit)(city, cityGrowthRegistry)` is whether `city`'s size has reached `limit`, for a
+  ruleset's `CanJoinCity` rule (Civilization: `tooLargeToJoin(10)`) and for telling the player why a unit can't join.
